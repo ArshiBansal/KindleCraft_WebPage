@@ -1,0 +1,79 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #F5F5DC; /* Beige */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup-container {
+  background-color: #FFF9F0;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+.signup-container h2 {
+  color: #5C4033; /* Camel Brown */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form label {
+  margin: 10px 0 5px;
+  color: #5C4033;
+  font-weight: 500;
+}
+
+.signup-form input {
+  padding: 10px;
+  border: 1px solid #D2B48C;
+  border-radius: 6px;
+  outline: none;
+}
+
+.signup-form input:focus {
+  border-color: #A67B5B;
+}
+
+button[type="submit"] {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #A67B5B; /* Camel Brown */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #8B5E3C;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.95em;
+}
+
+.login-link a {
+  color: #5C4033;
+  text-decoration: none;
+  font-weight: bold;
+}
