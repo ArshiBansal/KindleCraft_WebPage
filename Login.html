@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | KindleCraft Handmade</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+
+<div class="login-box">
+  <span class="close">&times;</span>
+  <h2>Login with</h2>
+
+  <!-- Tab Buttons -->
+  <input type="radio" name="loginTab" id="emailTab" checked hidden>
+  <input type="radio" name="loginTab" id="phoneTab" hidden>
+
+  <div class="tabs">
+    <label for="emailTab" class="tab">Login with Email</label>
+    <label for="phoneTab" class="tab">Login with Phone</label>
+  </div>
+
+  <!-- Email Form -->
+  <div class="form-content email-form">
+    <form>
+      <label for="email">Email <span class="required">*</span></label>
+      <div class="input-group">
+        <input type="email" id="email" placeholder="Enter your Email Address" required>
+      </div>
+
+      <div class="remember-me">
+        <input type="checkbox" id="remember">
+        <label for="remember">Remember Me</label>
+      </div>
+
+      <p class="bottom-links">
+        New to KindleCraft? <a href="signup.html">Create Account</a><br>
+        By continuing, you agree to KindleCraft’s
+        <a href="#">Privacy Policy</a> and <a href="#">Conditions of Use</a>.
+      </p>
+
+      <button class="continue-btn"><a href="html.html">CONTINUE</a></button>
+    </form>
+  </div>
+
+  <!-- Phone Form -->
+  <div class="form-content phone-form">
+    <form>
+      <label for="phone">Phone Number <span class="required">*</span></label>
+      <div class="input-group">
+        <input type="tel" id="phone" placeholder="Enter your phone number" required pattern="[0-9]{10}">
+      </div>
+
+      <p class="bottom-links">
+        New to KindleCraft? <a href="#">Create Account</a><br>
+        By continuing, you agree to KindleCraft’s
+        <a href="#">Privacy Policy</a> and <a href="#">Conditions of Use</a>.
+      </p>
+      <button class="continue-btn">Send OTP</button><br>
+      
+      <button class="continue-btn"><a href="html.html">Continue</a></button>
+    </form>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Body */
+body {
+  background-color: #f3e5d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Login Box */
+.login-box {
+  background-color: #fff8f0;
+  padding: 30px 25px;
+  width: 380px;
+  border-radius: 10px;
+  box-shadow: 0 0 18px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 22px;
+  color: #6e4b3a;
+  cursor: pointer;
+}
+
+/* Heading */
+.login-box h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #5a3e2b;
+}
+
+/* Google Button */
+.google-btn {
+  width: 100%;
+  background-color: #c1442d;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 15px 0;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  margin-bottom: 15px;
+  gap: 6px;
+}
+
+.tabs .tab {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  background-color: #e0c7ac;
+  color: #3e2b1f;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 6px 6px 0 0;
+  transition: background-color 0.3s;
+}
+
+/* Form Sections */
+.form-content {
+  display: none;
+}
+
+#emailTab:checked ~ .tabs label[for="emailTab"],
+#phoneTab:checked ~ .tabs label[for="phoneTab"] {
+  background-color: #7b4f3f;
+  color: #fff;
+}
+
+#emailTab:checked ~ .email-form,
+#phoneTab:checked ~ .phone-form {
+  display: block;
+}
+
+/* Labels */
+label {
+  display: block;
+  font-size: 14px;
+  margin: 10px 0 4px;
+  color: #5a3e2b;
+}
+
+.required {
+  color: red;
+  margin-left: 2px;
+}
+
+/* Input Group */
+.input-group {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.input-group .icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8a6750;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 10px 10px 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+/* Checkbox */
+.remember-me {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.remember-me input {
+  margin-right: 6px;
+}
+
+/* Bottom Links */
+.bottom-links {
+  font-size: 13px;
+  color: #444;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.bottom-links a {
+  color: #8b4b2b;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.bottom-links a:hover {
+  text-decoration: underline;
+}
+
+/* Continue Button */
+.continue-btn {
+  width: 100%;
+  background-color: #5b3831;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.continue-btn:hover {
+  background-color: #5b3831;
+}
