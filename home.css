@@ -64,19 +64,28 @@ body {
 .nav-links li a:hover::after {
   width: 100%;
 }
-.submenu-parent:hover .submenu {
-  display: block;
+
+/* Submenu Fix */
+.submenu-parent {
+  position: relative;
 }
 .submenu {
-  display: none;
   position: absolute;
-  top: 35px;
+  top: 100%;
   left: 0;
   background: #7B4F4F;
   border-radius: 4px;
   min-width: 140px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
   z-index: 1000;
+}
+.submenu-parent:hover .submenu,
+.submenu:hover {
+  opacity: 1;
+  visibility: visible;
 }
 .submenu li a {
   padding: 8px 12px;
@@ -154,6 +163,7 @@ body {
   height: 400px;
   overflow: hidden;
   margin-top: 30px;
+  object-fit: cover;
 }
 .carousel-slide {
   position: absolute;
@@ -161,8 +171,9 @@ body {
   height: 100%;
   opacity: 0;
   animation: carouselFade 25s infinite;
+  z-index: 1;
 }
-.carousel-slide:nth-child(1) { animation-delay: 0s; }
+.carousel-slide:nth-child(1) { animation-delay: 0s; z-index: 2; }
 .carousel-slide:nth-child(2) { animation-delay: 5s; }
 .carousel-slide:nth-child(3) { animation-delay: 10s; }
 .carousel-slide:nth-child(4) { animation-delay: 15s; }
@@ -201,7 +212,7 @@ body {
 .category-card {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   width: 250px;
   padding: 20px;
   transition: 0.3s;
@@ -290,6 +301,111 @@ body {
   line-height: 1.5;
 }
 
+/* New Arrivals Section */
+.new-arrivals {
+  background-color: #E7CBA9;
+  padding: 60px 40px;
+  text-align: center;
+  color: #5A4B3B;
+}
+.new-arrivals h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+.arrival-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+.arrival-item {
+  background: #F5EFE6;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(123, 79, 79, 0.15);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.arrival-item:hover {
+  transform: translateY(-6px);
+}
+.arrival-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.arrival-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #7B4F4F;
+  margin: 0;
+}
+.more-btn {
+  margin-top: 40px;
+  background-color: #7B4F4F;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.more-btn:hover {
+  background-color: #5A3B3B;
+}
+
+/* --- UPDATED INSTAGRAM SECTION --- */
+.instagram-promo {
+  background-color: #faf3e0;
+  text-align: center;
+  padding: 70px 20px;
+  font-family: 'Georgia', serif;
+}
+.insta-gallery-top,
+.insta-gallery-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+.insta-text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.insta-text h2 {
+  font-size: 36px;
+  color: #7B4F4F;
+  margin-bottom: 10px;
+}
+.insta-highlight {
+  color: #5A3B3B;
+  font-style: italic;
+}
+.insta-handle {
+  font-size: 20px;
+  color: #A26769;
+  font-weight: 500;
+}
+.insta-gallery-top img,
+.insta-gallery-bottom img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+.insta-gallery-top img:hover,
+.insta-gallery-bottom img:hover {
+  transform: scale(1.05);
+}
+
 /* Newsletter Section */
 .newsletter {
   background-image: url('newsletter-bg.jpg');
@@ -301,7 +417,6 @@ body {
   text-align: center;
   margin-top: 60px;
 }
-
 .newsletter-overlay {
   background-color: rgba(123, 79, 79, 0.85);
   padding: 60px 20px;
@@ -309,27 +424,23 @@ body {
   max-width: 800px;
   margin: 0 auto;
 }
-
 .newsletter-content h2 {
   font-size: 32px;
   margin-bottom: 15px;
   font-weight: bold;
   color: #fff8f0;
 }
-
 .newsletter-content p {
   font-size: 16px;
   margin-bottom: 25px;
   color: #f0e8dd;
 }
-
 .newsletter-form {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
 }
-
 .newsletter-form input {
   padding: 10px 15px;
   font-size: 16px;
@@ -337,7 +448,6 @@ body {
   border-radius: 6px;
   flex: 1 1 250px;
 }
-
 .newsletter-form button {
   padding: 10px 20px;
   background-color: #C1D0B5;
@@ -409,13 +519,16 @@ body {
   transform: scale(1.1);
 }
 .footer-bottom {
+  width: 100%;
   text-align: center;
   margin-top: 25px;
-  border-top: 1px solid rgba(255,255,255,0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
   padding-top: 15px;
   font-style: italic;
   font-size: 12px;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Responsive */
