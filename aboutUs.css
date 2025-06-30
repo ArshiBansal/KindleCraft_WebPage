@@ -299,12 +299,18 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .footer-section {
-  flex: 1;
-  min-width: 200px;
+  flex: 1 1 250px;
+  min-width: 250px;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .footer-section h3 {
@@ -346,4 +352,19 @@ body {
   padding-top: 15px;
   font-size: 14px;
   border-top: 1px solid #A1887F;
+}
+
+/* ===== Responsive Footer ===== */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    flex: unset;
+    min-width: unset;
+    margin-bottom: 30px;
+  }
 }
